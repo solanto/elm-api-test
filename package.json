@@ -1,0 +1,30 @@
+{
+  "name": "my-very-own-elm-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel src/index.html",
+    "clean": "rimraf dist/",
+    "build": "parcel build src/index.html --no-source-maps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solanto/elm-roots.git"
+  },
+  "author": "Andrew Solanto",
+  "license": "unlicense",
+  "bugs": {
+    "url": "https://github.com/solanto/elm-roots/issues"
+  },
+  "homepage": "https://github.com/solanto/elm-roots#readme",
+  "devDependencies": {
+    "elm": "^0.19.1-5",
+    "elm-hot": "^1.1.6",
+    "node-elm-compiler": "^5.0.6",
+    "parcel-bundler": "^1.12.5",
+    "rimraf": "^2.7.1",
+    "sass": "^1.34.0"
+  }
+}
