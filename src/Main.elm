@@ -160,7 +160,7 @@ statistic label dataFigure =
             [ class "label" ]
             [ text <| label ++ ": " ]
         , span
-            [ class "stat "]
+            [ class "stat"]
             [ text dataFigure ]
         ]
 
