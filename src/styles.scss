@@ -1,54 +1,103 @@
-$dark: #161322;
+:root {
+    --foreground: white;
+    --background: rgb(29, 29, 29);
+    --accent: rgb(19, 106, 192);
+}
 
-body, h1 { margin: 0 }
+body {
+    height: 100%;
+    margin: 0;
+    color: var(--foreground);
+    background-color: var(--background);
+}
 
-#greeting, .card {
+body, select {
+    font-family: "Open Sans";
+    font-size: 1.2rem;
+}
+
+main {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: color 0.3s ease-out, background-color 0.3s ease;
+    top: clamp(0vh, 30vh, calc(50% - 12em));
+    position: absolute;
+    justify-content: center;
 }
 
-#greeting {
-    font-size: 7vmin;
-    height: 100vh;
-    display: flex;
-    font-family: Montserrat;
-    background-color: lighten($dark, 70%);
-
-    &.dark {
-        color: white;
-        background-color: $dark;
-    }
+[data-elm-hot="true"] {
+    height: fit-content !important;
 }
 
-#night-mode-toggle {
-    user-select: none;
-    width: min-content;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    transition: transform 0.3s cubic-bezier(0.42, 0.23, 0.16, 1.84);
-    font-size: 1.2em;
-
-    &:focus-visible { outline: red solid 2pt }
-    &:hover { transform: rotate(45deg) }
-}
-
-.card {
-    width: 38vw;
-    margin: 5vh;
-    background-color: white;
-    padding: 1.2em;
+article {
     text-align: center;
+    display: block;
+    height: fit-content;
+    padding: 2em;
+    margin-top: 1em;
 }
 
-.dark {
-    #night-mode-toggle { color: white }
+h1 {
+    font-weight: bold;
+    position: relative;
+    line-height: 1;
 
-    .card {
-        background-color: lighten($dark, 10%);
-        border: solid 2pt lighten($dark, 70%);
+    &::before {
+        z-index: -1;
+        content: "";
+        width: 30%;
+        height: 100%;
+        position: absolute;
+
+        --offset: -0.3em;
+        left: calc(var(--offset) - 0.1em);
+        top: var(--offset);
+        
+        --border: 0.12em solid var(--accent);
+        border-top: var(--border);
+        border-left: var(--border);
+
+        border-radius: 0.1em;
     }
+}
+
+li::marker {
+    content: ""
+}
+
+ul {
+    padding-inline-start: 0;
+}
+
+label::after {
+    content: ": ";
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    div {
+        display: inline;
+    }
+}
+
+select {
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 0.2em;
+    cursor: pointer;
+}
+
+form div, li {
+    margin-top: 0.5em;
+}
+
+.label {
+    
+}
+
+.stat {
+    font-weight: bold;
 }
