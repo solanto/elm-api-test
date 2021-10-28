@@ -19,7 +19,9 @@ body, select {
 main {
     width: 100%;
     display: flex;
-    top: clamp(0vh, 30vh, calc(50% - 12em));
+
+    --min-top: 0vh;
+    top: clamp(var(--min-top), 30vh, calc(50% - 12em));
     position: absolute;
     justify-content: center;
 }
