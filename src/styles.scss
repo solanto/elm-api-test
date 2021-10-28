@@ -103,3 +103,22 @@ form div, li {
 .stat {
     font-weight: bold;
 }
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: right;
+    margin-bottom: 1em;
+    font-size: 0.85em;
+    
+    * {
+        margin-right: 0.8em;
+        color: var(--foreground);
+        text-decoration: none;
+        background-color: var(--accent);
+        padding: 0.1em 0.3em;
+        border-radius: 0.2em;
+        font-family: monospace;
+    }
+}
