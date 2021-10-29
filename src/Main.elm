@@ -227,16 +227,22 @@ update msg model =
             
         Receive response ->
             ( case response of
+                -- failed api request
                 Err _ -> fail model
                 
+                -- successful api request
                 Ok contents ->
                     case decodeData contents of
+                        -- malformed api response
                         Err _ -> fail model
                         
+                        -- valid api response
                         Ok dataList ->
                             case List.head dataList of
+                                -- empty api response
                                 Nothing -> fail model
-                                    
+
+                                -- data available
                                 Just data ->
                                     { model
                                         | status = Success
