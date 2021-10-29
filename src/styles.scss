@@ -97,12 +97,32 @@ form div, li {
     margin-top: 0.5em;
 }
 
-.label {
+.label::before {
     
 }
 
 .stat {
     font-weight: bold;
+}
+
+aside {
+    opacity: 80%;
+}
+
+.loading {
+    color: gold;
+
+    &::after {
+        content: " 🔄️"
+    }
+}
+
+.failure {
+    color: pink;
+
+    &::after {
+        content: " 😢"
+    }
 }
 
 footer {
