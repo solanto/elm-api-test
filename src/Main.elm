@@ -162,13 +162,11 @@ queryDropdown props =
 
 dates : Date -> List String
 dates today =
-    List.reverse <|
-        List.map toIsoString
-            (range Day
-                1
-                (fromCalendarDate 2020 Jan 1)
-                today
-            )
+    List.reverse << List.map
+        toIsoString
+        <| range Day 1
+            (fromCalendarDate 2020 Jan 1)
+            today
 
 
 statistic : String -> String -> Html msg
